@@ -1,25 +1,49 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: center;
+}
+
+
 .all-squares {
     display: flex;
-    flex-flow: wrap;
-    width: 650px;
-    height: 650px;
-    margin: auto;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 800px;
+    width: 800px;
+    /* box-sizing: border-box; */
+}
+
+.row {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    height: auto;
+    justify-content: space-between;
 }
 
 .square {
+    display: flex;
     flex: 1;
-    border: 1px;
-    border-color: black;
-    border: solid;
-    min-height: 150px;
-    min-width: 150px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    border: solid 1px white;
+    margin: 0;
 }
 
-.square-default {
+.blue {
     background-color: lightblue;
 }
 
-.square-coloured {
+.pink {
     background-color: pink;
+}
+
+button {
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    border: 0px;
 }
