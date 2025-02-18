@@ -11,8 +11,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 800px;
-    width: 800px;
+    aspect-ratio: 1 / 1;
+    height: 85vh;
+    width: auto;
     /* box-sizing: border-box; */
 }
 
@@ -44,6 +45,8 @@ body {
 button {
     padding: 10px;
     color: white;
+    background-color: darkgray;
+    font-size: large;
     font-weight: bold;
     border: 0px;
 }

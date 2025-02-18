@@ -1,10 +1,10 @@
 const container=document.querySelector(".all-squares");
 
-changeColour=function(box){
-    if (box.getAttribute("class")==="square blue") {
-        box.setAttribute("class", "square pink");
+changeColour=function(box, specifyType){
+    if (box.getAttribute("class")===specifyType + " blue") {
+        box.setAttribute("class", specifyType + " pink");
     } else {
-        box.setAttribute("class", "square blue");
+        box.setAttribute("class", specifyType + " blue");
 }
 }
 
@@ -16,7 +16,7 @@ createSquares = function(rows){
       for (let j = 1; j<=rows; j++){
         node=document.createElement("div");
         node.setAttribute("class", "square blue");
-        node.setAttribute("id", "square"+i+"_"+j);
+        node.setAttribute("id", "square_"+i+"_"+j);
         row.appendChild(node);
       }
     container.appendChild(row);
@@ -27,7 +27,7 @@ createSquares = function(rows){
   allSquares.forEach(square => {
     square.addEventListener("mouseenter", function(e) {
         console.log(e.target.getAttribute("id"))
-        changeColour(e.target);
+        changeColour(e.target, "square");
     })
 });
 }
@@ -46,5 +46,5 @@ button.addEventListener("click", function(e){
     container.innerHTML="";
     createSquares(rows);
 
-    changeColour(e.target);
+    changeColour(e.target, "button");
 })
