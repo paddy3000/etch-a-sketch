@@ -1,0 +1,25 @@
+.all-squares {
+    display: flex;
+    flex-flow: wrap;
+    width: 650px;
+    height: 650px;
+    margin: auto;
+    justify-content: center;
+}
+
+.square {
+    flex: 1;
+    border: 1px;
+    border-color: black;
+    border: solid;
+    min-height: 150px;
+    min-width: 150px;
+}
+
+.square-default {
+    background-color: lightblue;
+}
+
+.square-coloured {
+    background-color: pink;
+}
