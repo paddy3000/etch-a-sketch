@@ -23,9 +23,6 @@ changeOpacity=function(square) {
   })
 }
 
-// Game mode function
-
-
 // createSquares function to build grid
 createSquares = function(rows){
   // Reset squares
@@ -41,8 +38,7 @@ createSquares = function(rows){
         node.setAttribute("class", "square blue");
         node.setAttribute("id", "square_"+i+"_"+j);
         row.appendChild(node);
-        if (gridMode==="reverse") {node.style.opacity=1}
-        if (gridMode==="opacity") {node.style.opacity=0}
+        if (gridMode==="opacity") {node.style.opacity=0} else {node.style.opacity=1};
       }
     container.appendChild(row);
   }
@@ -62,12 +58,10 @@ createSquares(gridSize);
 // Change grid mode
 const reverseModeBtn=document.querySelector("#reverse-mode");
 const opacityModeBtn=document.querySelector("#opacity-mode");
-const gameModeBtn=document.querySelector("#game-mode");
 
 reverseModeBtn.addEventListener("click", function() {
   reverseModeBtn.setAttribute("class", "modeHighlighted");
   opacityModeBtn.setAttribute("class", "");
-  gameModeBtn.setAttribute("class", "");
   gridMode="reverse";
   createSquares(gridSize);
   
@@ -76,19 +70,9 @@ reverseModeBtn.addEventListener("click", function() {
 opacityModeBtn.addEventListener("click", function() {
   opacityModeBtn.setAttribute("class", "modeHighlighted");
   reverseModeBtn.setAttribute("class", "");
-  gameModeBtn.setAttribute("class", "");
   gridMode="opacity";
   createSquares(gridSize);
 });
-
-gameModeBtn.addEventListener("click", function() {
-  gameModeBtn.setAttribute("class", "modeHighlighted");
-  opacityModeBtn.setAttribute("class", "");
-  reverseModeBtn.setAttribute("class", "");
-  gridMode="game";
-  createSquares(gridSize);
-});
-
 
 
 // Button to change size of the grid

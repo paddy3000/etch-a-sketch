@@ -42,6 +42,10 @@ body {
     background-color: pink;
 }
 
+.red {
+    background-color: red;
+}
+
 button {
     padding: 10px;
     color: white;
